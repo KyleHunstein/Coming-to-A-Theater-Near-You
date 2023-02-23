@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MOVIE SUCCESS PREDICTOR</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <style>
+      
+      body {
+        background-color:rgba(0, 0, 0, 0);
+      }
+
+      .jumbotron {
+        background: #ba9766 linear-gradient(#ba9766, #fae6ca);
+        background-size: 100% 100%;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron" style="text-align:center">
+        <br>
+        <h1>MOVIE SUCCESS PREDICTOR</h1>
+        <h3>1. Enter a budget amount, a genre, a popularity number, revenue, runtime, and an IMDB rating.  </br> 
+            2. Will your movie be a success?</br> 
+            3. Click the predict button and find out <span class="star-wars"></span></h3> 
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  <div class="search-container">
+    <div class="row">
+      <div class="container" style="float: center; width: 50%">
+        <form method="POST" action="/predict" role="form" , name="predictform">
+          <div class="row">
+            <input type="text" id="budget" placeholder="Budget" name="budget">
+          </div>
+          <br>
+          <select name="genres">
+            <option value="Action">Action</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+          </select>          
+          <br>
+          <div class="row">
+            <select id="original_language" name="original_language">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+          </div>
+          <br>
+          <div class="row">
+            <input type="text" id="popularity" placeholder="Popularity" name="popularity">
+          </div>
+          <br>
+          <div class="row">
+            <input type="text" id="revenue" placeholder="Revenue" name="revenue">
+          </div>
+          <br>
+          <div class="row">
+            <input type="text" id="runtime" placeholder="Runtime" name="runtime">
+          </div>
+          <br>
+          <div class="row">
+            <label for="vote_average" style="display: inline-block; width: 200px">Vote Average:</label>
+            <input type="number" id="voteAverage" min="0" max="10" step="0.1" required name="vote_average">
+        </div>
+        <br>
+        <input type="submit" value="submit" class="btn btn-default">
+      </form>
+      <div>{{result}}</div>
+      <div id="scatter-plot"></div>
+</div>
+<div id="scatter-plot"></div>
+</div>
+<div id="stars"></div>
+<div id="stars2"></div>
+<div id="stars3"></div>
+<script src="static/js/logic.js"></script>
+</body>
+</html>
+

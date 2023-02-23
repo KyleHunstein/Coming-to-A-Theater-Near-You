@@ -3,8 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+<<<<<<< HEAD
+
+=======
 #Data Sources
 # Data_Sources/
+>>>>>>> 87459b823314c6cb8c705da3de39de1b035a1f95
 
 # C extensions
 *.so
