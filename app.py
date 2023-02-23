@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static' )
+
 
 # Load the saved model from file
 model = joblib.load('movie_success_model.joblib')
@@ -68,6 +69,13 @@ def predict():
     print(result)
     return render_template("index.html", result = result)
 
+@app.route('/visualizations.html')
+def visualizations():
+    return render_template('visualizations.html')
+
+@app.route('/index.html')
+def movie():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
