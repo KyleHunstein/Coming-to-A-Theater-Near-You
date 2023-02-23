@@ -1,5 +1,4 @@
 absl-py==1.4.0
-alabaster @ file:///home/ktietz/src/ci/alabaster_1611921544520/work
 anaconda-client @ file:///C:/ci/anaconda-client_1635342725944/work
 anaconda-navigator==2.2.0
 anaconda-project @ file:///tmp/build/80754af9/anaconda-project_1626085644852/work
