@@ -37,6 +37,7 @@ boto3==1.26.75
 botocore==1.29.75
 Bottleneck @ file:///C:/ci/bottleneck_1607557040328/work
 brotlipy==0.7.0
+buildpack: heroku/python
 cached-property @ file:///tmp/build/80754af9/cached-property_1600785575025/work
 cachetools==5.3.0
 certifi==2021.10.8
